@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
+from langchain_openai import OpenAIEmbeddings
 
 load_dotenv()
 
@@ -15,9 +16,8 @@ os.makedirs(UPLOAD_DIR,exist_ok=True)
 
 
 async def load_vectorstores(upload_files, role: str, doc_id: str):
-    embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2"
-    )
+    
+    embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 
     vectorstore = Chroma(
         embedding_function=embeddings,

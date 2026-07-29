@@ -11,7 +11,7 @@ chromadb
 
 python-multipart
 python-dotenv
-psycopg2
+psycopg2-binary
 pypdf
 bcrypt
 

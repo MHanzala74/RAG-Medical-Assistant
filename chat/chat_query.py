@@ -9,11 +9,9 @@ import asyncio
 
 load_dotenv()
 
-llm = ChatGroq(model="llama-3.3-70b-versatile")
+llm = ChatOpenAI(model='gpt-4o')
 
-embedding_model = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2"
-    )
+embedding_model = OpenAIEmbeddings(model="text-embedding-3-small")
 
 vectorstore = Chroma(
     persist_directory='./chroma_db',
