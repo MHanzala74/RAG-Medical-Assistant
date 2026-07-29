@@ -14,8 +14,3 @@ python-dotenv
 psycopg2-binary
 pypdf
 bcrypt
-
-dotenv
-
-langchain_huggingface
-sentence-transformers
