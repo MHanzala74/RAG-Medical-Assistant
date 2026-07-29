@@ -1,7 +1,6 @@
 import os 
 import time
 from pathlib import Path
-from langchain_huggingface import HuggingFaceEmbeddings
 from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
